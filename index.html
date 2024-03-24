@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Animated Greeting Card</title>
+  <style>
+    body {
+      background-image: linear-gradient(-39deg,#ff80ab, white, #ffcc80, #40c4ff, #80d8ff, #ffab40, #DC143C,#003893 );
+      /* background-image: width: 35px; url(abir.gif,) ; */
+      background-size: 400% 400%;
+      animation: gradientAnimation 10s ease infinite;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      overflow: hidden;
+    }
+
+    .holi-container {
+      position: relative;
+      width: 200px;
+      height: 200px;
+      background-image: url(abir.mp4);
+    }
+
+    .circle {
+      position: absolute;
+      border-radius: 50%;
+      animation: holi 3s infinite;
+    }
+
+    .circle:nth-child(1) {
+      background-color: #f7d124;
+      width: 50px;
+      height: 50px;
+      top: 30%;
+      left: 20%;
+    }
+
+    .circle:nth-child(2) {
+      background-color: #4caf50;
+      width: 70px;
+      height: 70px;
+      top: 50%;
+      left: 60%;
+    }
+
+    .circle:nth-child(3) {
+      background-color: #f70000;
+      width: 79px;
+      height: 79px;
+      top: 30%;
+      left: 40%;
+    }
+
+    .p {
+      color: red;
+    }
+
+    .circle:nth-child(4) {
+      background-color: #003893;
+      width: 60px;
+      height: 60px;
+      top: 10%;
+      left: 80%;
+    }
+
+    @keyframes holi {
+      0% {
+        transform: scale(0);
+        opacity: 0;
+      }
+
+      50% {
+        opacity: 1;
+      }
+
+      100% {
+        transform: scale(1);
+        opacity: 0;
+      }
+    }
+
+    .card {
+      /* background: "https://www.shutterstock.com/video/clip-1093560139-explosion-color-colorful-particles-powder-3d-animated"; */
+      width: 31rem;
+      height: 41rem;
+      background-color: #fff;
+      border-radius: 20px;
+      box-shadow: 0 4px 8px rgba(196, 54, 54, 0.1);
+      position: relative;
+      overflow: hidden;
+      animation: swing 3s ease-in-out infinite;
+    }
+
+    @keyframes swing {
+
+      0%,
+      100% {
+        transform: rotate(0deg);
+      }
+
+      50% {
+        transform: rotate(5deg);
+      }
+    }
+    .button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: #ffffff;
+    border: none;
+    outline: none;
+  }
+    .message {
+      font-family: Arial, sans-serif;
+      /* Use standard web-safe font */
+      text-align: center;
+      padding: 20px;
+    }
+
+    .hh {
+      font-size: 36px;
+      font-weight: bold;
+      text-align: center;
+      cursor: pointer;
+      /* Change cursor to pointer on hover */
+      transition: color 0.5s, transform 0.5s;
+      /* Smooth transition for color change and scale */
+    }
+
+    .hh:hover {
+      color: purple;
+      /* Change color on hover */
+      transform: scale(1.2);
+      /* Magnify text on hover */
+    }
+
+    .heart {
+      position: absolute;
+      top: 40%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 50px;
+      color: red;
+      animation: heartbeat 1.5s ease-in-out infinite;
+    }
+
+    @keyframes heartbeat {
+      0% {
+        transform: scale(1);
+      }
+
+      50% {
+        transform: scale(1.5);
+      }
+
+      100% {
+        transform: scale(1);
+      }
+    }
+
+    .animated-text {
+      font-size: 36px;
+      font-weight: bold;
+      text-align: center;
+      animation: colorChange 4s infinite alternate;
+    }
+
+    @keyframes colorChange {
+      0% {
+        color: red;
+      }
+
+      25% {
+        color: blue;
+      }
+
+      50% {
+        color: green;
+      }
+
+      75% {
+        color: orange;
+      }
+
+      100% {
+        color: purple;
+      }
+    }
+    @keyframes holiAnimation {
+    0% {
+      transform: translateY(0) rotate(0deg);
+    }
+    100% {
+      transform: translateY(-200vh) rotate(360deg);
+    }
+  }
+  #holi-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -1;
+  }
+
+  .holi-particle {
+    position: absolute;
+    background-color: transparent;
+    border-radius: 50%;
+    pointer-events: none;
+    animation: holiAnimation 5s linear infinite;
+  }
+  </style>
+</head>
+
+<body>
+
+  <source src="abir.gif" type="gif">
+  <!-- <video autoplay loop muted style="width: 50%; height: 71%; object-fit: cover;">
+    <source src="abir.mp4" type="video/mp4">
+   You can add more source elements for different video formats
+    Your browser does not support the video tag.
+  </video> -->
+  
+
+  <div id="holi-background"></div>
+  <div class="card">
+    <div class="holi-container">
+      <div class="circle"></div>
+      <div class="circle"></div>
+      <div class="circle"></div>
+      <div class="circle"></div>
+
+    </div>
+    <div class="message">
+
+      <h1 class="hh">
+        <span style="color: #ff0000;">हो</span>
+        <span style="color: #f0a708;">ली</span>
+        <span style="color: #c800ff;">की</span>
+        <span style="color: #04ff00;">शु</span>
+        <span style="color: #ff00cc;">भ</span>
+        <span style="color: #0F52BA;">का</span>
+        <span style="color: rgb(255, 234, 0);">म</span>
+        <span style="color: #00ff08;">ना</span>
+        <span style="color: crimson;">एं</span>
+
+      </h1>
+
+      <div class="animated-text">"रंगों का त्योहार होली आया, खुशियाँ लाया। दोस्तों के साथ खेलो, रंग बिरंगे इस त्योहार
+        में खो जाओ। होली की हार्दिक शुभकामनाएं!"
+      </div>
+      <h3>DO you Want to play holi with me</h3>
+      <button id="myButton" class="button">No</button>
+      <button id="yesButton" class="button" onclick="redirectToYesPage()">Yes</button>
+    </div>
+
+    
+    <!-- <div class="heart">&hearts;</div> -->
+
+
+<script>
+  function createHoliParticle() {
+    const colors = ['#FF5733', '#FFC300', '#33FF3B', '#1A62FF', '#FF1AEC'];
+    // const colors = ['#ff80ab', 'white, '#ffcc80, '#40c4ff', '#80d8ff', '#ffab40', '#DC143C','#003893'];
+    const particle = document.createElement('div');
+    particle.classList.add('holi-particle');
+    particle.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+    particle.style.width = `${Math.random() * 20 + 5}px`;
+    particle.style.height = particle.style.width;
+    particle.style.left = `${Math.random() * window.innerWidth}px`;
+    particle.style.top = `${window.innerHeight}px`;
+        // Add click event listener to burst the bubble when clicked
+        particle.addEventListener('click', function() {
+      particle.remove(); // Remove the bubble from the DOM
+    });
+
+    document.getElementById('holi-background').appendChild(particle);
+    setTimeout(() => {
+      particle.remove();
+    }, 5000);
+  }
+
+  setInterval(createHoliParticle, 100);
+
+  const button = document.getElementById('myButton');
+
+  // Toggle function to change button text between "No" and "Yes"
+  function toggleButtonText() {
+    if (button.textContent === 'No') {
+      button.textContent = 'Yes';
+    } else {
+      button.textContent = 'No';
+    }
+  }
+
+  // Add click event listener to toggle button text
+  button.addEventListener('click', toggleButtonText);
+
+  // function redirectToNoPage() {
+  //   window.location.href = 'yes.html';
+  // }
+
+  function redirectToYesPage() {
+    window.location.href = 'Yes.html';
+  }
+</script>
+</body>
+</html>
